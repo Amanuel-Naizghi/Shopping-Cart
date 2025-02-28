@@ -1,9 +1,16 @@
+import { data } from 'react-router-dom';
 import electronics from '../assets/electronics3.jpg';
 import jewelry from '../assets/jewelry.jpg';
 import men from '../assets/men.jpg';
 import women from '../assets/women.jpg';
+import FetchData from './fetchData';
 
 export default function HomeContent(){
+    let myHomeItem=FetchData();
+    let dataFetched=false;
+    if(myHomeItem.homeData!==null)dataFetched=true;
+    console.log(myHomeItem);
+    console.log(dataFetched);
     return(
         <div className="home-content-container">
             <div className="hot-product-container">
@@ -11,14 +18,20 @@ export default function HomeContent(){
                     <h1>Welcome to ShopWithMe market</h1>
                     <h2>A place where you feel free to pick your choice</h2>
                 </div>
-                <div className="product-img-container"></div>
+                {dataFetched&&
+                    <div className="product-img-container">
+                        <img src={myHomeItem.homeData.image} alt={myHomeItem.homeData.name} />
+                    </div>
+                }
                 <div className="hot-product">
-                    <div className="product-deal-container">
+                    {dataFetched&&
+                        <div className="product-deal-container">
                         <h2 className="advertise1">Don't Skip This Amazing Discount!</h2>
-                        <p className="advertise2">blah blah</p>
-                        <p className="price">$110</p>
+                        <p className="advertise2">{myHomeItem.homeData.name}</p>
+                        <p className="price">${myHomeItem.homeData.price}</p>
                         <button className="buy-button">Shop Now</button>
                     </div>
+                    }
                 </div>
             </div>
             <div className="catagories">
