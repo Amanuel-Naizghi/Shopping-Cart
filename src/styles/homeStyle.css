@@ -1,51 +1,9 @@
-@font-face{
-    font-family:'logo';
-    src:url(../my-font/logo-font.ttf) format(truetype);
-}
+
 .home-container{
     display:grid;
     grid-template-rows: 100px 2050px;
     width:100%;
     font-family: inherit;
-}
-.home-container>.header-container{
-    display:flex;
-    justify-content: space-between;
-    padding:0.7rem;
-}
-.home-container>.header-container>.header-logo{
-    color:#626F47;
-    font-family:'logo';
-}
-.header-container>.products-login-cart{
-    display:flex;
-    justify-content: space-around;
-    padding-top:1.2rem;
-}
-.header-container>.products-login-cart>.cart-icon-container{
-    display:flex;
-}
-.header-container>.products-login-cart>.cart-icon-container a{
-    margin-right:0;
-}
-.header-container>.products-login-cart>.cart-icon-container>.cart-counter{
-    font-size:0.7rem;
-    margin:2em 0.1em;
-}
-.header-container>.products-login-cart img{
-    width:25px;
-    height:25px;
-
-}
-.header-container>.search-container{
-    padding-top:1.8rem;
-}
-.header-container>.search-container>input{
-    margin-right:0.5rem;
-    height:1.2rem;
-    font-size:0.8rem;
-    border-radius:5px;
-    border:0.1rem solid #3D8D7A;
 }
 .home-container>.home-content-container{
     background-color: rgb(247, 247, 247);
@@ -62,7 +20,7 @@
     padding:2.8rem 0;
 }
 .home-content-container>.hot-product-container>.product-img-container>img{
-    width:250px;
+    width:300px;
     height:300px;
 }
 .home-content-container>.hot-product-container>.welcome{
@@ -79,7 +37,12 @@
     background-color:#7e8472;
     border-radius:10px;
     color:white;
-    padding:3rem 2rem;
+    padding:2rem 2rem;
+}
+.home-content-container>.hot-product-container>.hot-product>.product-deal-container{
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
 }
 .home-content-container>.hot-product-container>.hot-product .advertise1
 {
@@ -103,6 +66,7 @@
     font-size:1.2rem;
     background-color: white;
     color:#7e8472;
+    width:120px;
 }
 .hot-product-container>.hot-product .buy-button:hover{
     background:#3D8D7A;

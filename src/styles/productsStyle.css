@@ -1,0 +1,101 @@
+.products-container>.all-products{
+    padding:1.5rem;
+    background:rgb(247, 247, 247);
+}
+.products-container>.all-products>h1{
+    display:flex;
+    justify-content:center;
+    font-size:2rem;
+    margin:1rem auto;
+    margin-bottom:2rem;
+    width:195px;
+    border-bottom:2px solid #626F47;
+    padding-bottom:0.5rem
+}
+.products-container>.all-products>.products-list-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(auto-fill,550px);
+    gap:1.5rem;
+}
+.products-list-container>.products-list>a:hover{
+    color:gray;
+}
+.products-list-container>.products-list>a>.item-container>img{
+    width:180px;
+    height:220px;
+    align-self: center;
+}
+.products-container>.all-products>.products-list-container>.products-list{
+    background:white;
+    border-radius:10px;
+    display:flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+.products-container>.all-products>.products-list-container>.products-list .item-container{
+    padding:1.5rem 1rem 0 1rem;
+}
+.products-list .item-container>.product-details>h2{
+    text-align: start;
+}
+.products-list-container>.products-list .item-container>.product-details>p{
+    color:#3D8D7A;
+    text-align: start;
+}
+/* .products-container>.all-products>.products-list-container{
+    
+    margin-top:1.5rem;
+}
+.all-products>.products-list{
+    width:350px;
+    height:380px;
+    background:white;
+    border-radius:10px;
+    
+}
+.all-products .products-list>a{
+    margin:0;
+}
+.all-products .products-list>a>.item-container{
+    display:flex;
+    flex-direction:column;
+    padding:1.2rem 1.2rem 0.5rem 1.2rem;
+}
+.all-products .products-list>a:hover{
+    color:gray;
+}
+.all-products .products-list>a>.item-container>img{
+    width:180px;
+    height:220px;
+    align-self: center;
+}
+.all-products .products-list>a>.item-container>.product-details{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+.all-products .products-list>a>.item-container h2{
+    font-size:1rem;
+    text-align:start;
+    margin:0.5rem 0;
+}
+.all-products .products-list>a>.item-container .item-price{
+    font-size:1.2rem;
+    text-align:start;
+    font-weight:600;
+    color:#3D8D7A;
+    margin:0.5rem 0;
+}
+.all-products .products-list>a>.item-container .rating{
+    font-size:0.8rem;
+    color:#3D8D7A;
+    text-align:start;
+    margin:0.5rem 0;
+}
+.all-products .products-list>a>.item-container .rating:hover{
+    color:rgb(75, 158, 231);
+}
+.all-products>.products-list-container>.products-list>button{
+    width:330px;
+} */

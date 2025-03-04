@@ -1,7 +1,6 @@
 import {useEffect,useState} from 'react';
 
 export default function FetchData(){
-    const[homeData,setHomeData]=useState(null);
     const[products,setProducts]=useState(null);
     const[loading,setLoading]=useState(true);
     const[error,setError]=useState(null);
@@ -14,13 +13,15 @@ export default function FetchData(){
                 id:item.id,
                 name:item.title,
                 image:item.image,
-                price:item.price
+                price:item.price,
+                rating:item.rating,
+                description:item.description,
             }))
+            console.log(data);
             setProducts(productsInfo);
-            setHomeData(productsInfo[3]);
         })
     },[]);
 
     console.log(products);
-    return {homeData};
+    return {products};
 }

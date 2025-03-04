@@ -1,0 +1,43 @@
+@font-face{
+    font-family:'logo';
+    src:url(../my-font/logo-font.ttf) format(truetype);
+}
+.header-container{
+    display:flex;
+    justify-content: space-between;
+    padding:0.7rem;
+}
+.header-container>.header-logo{
+    color:#626F47;
+    font-family:'logo';
+}
+.header-container>.products-login-cart{
+    display:flex;
+    justify-content: space-around;
+    padding-top:1.2rem;
+}
+.header-container>.products-login-cart>.cart-icon-container{
+    display:flex;
+}
+.header-container>.products-login-cart>.cart-icon-container a{
+    margin-right:0;
+}
+.header-container>.products-login-cart>.cart-icon-container>.cart-counter{
+    font-size:0.7rem;
+    margin:2em 0.1em;
+}
+.header-container>.products-login-cart img{
+    width:25px;
+    height:25px;
+
+}
+.header-container>.search-container{
+    padding-top:1.8rem;
+}
+.header-container>.search-container>input{
+    margin-right:0.5rem;
+    height:1.2rem;
+    font-size:0.8rem;
+    border-radius:5px;
+    border:0.1rem solid #3D8D7A;
+}

@@ -6,6 +6,13 @@ import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom';
 import Products from './components/products.jsx';
 import Login from './components/login.jsx';
 import Cart from './components/cart.jsx';
+import Details from './components/details.jsx';
+import './styles/homeStyle.css';
+import './styles/headerStyle.css';
+import './styles/productsStyle.css';
+import './styles/detailsStyle.css';
+
+let cartData=[];
 
 const router=createBrowserRouter([
   {
@@ -13,16 +20,20 @@ const router=createBrowserRouter([
     element:<App/>
   },
   {
-    path:'products',
+    path:'/products',
     element:<Products/>
   },
   {
-    path:'login',
+    path:'/login',
     element:<Login/>
   },
   {
-    path:'cart',
+    path:'/cart',
     element:<Cart/>
+  },
+  {
+    path:'/details',
+    element:<Details/>
   }
 ])
 
@@ -31,3 +42,5 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router}/>
   </StrictMode>,
 )
+
+export {cartData};

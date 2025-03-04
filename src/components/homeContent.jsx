@@ -1,4 +1,3 @@
-import { data } from 'react-router-dom';
 import electronics from '../assets/electronics3.jpg';
 import jewelry from '../assets/jewelry.jpg';
 import men from '../assets/men.jpg';
@@ -6,31 +5,38 @@ import women from '../assets/women.jpg';
 import FetchData from './fetchData';
 
 export default function HomeContent(){
-    let myHomeItem=FetchData();
+    let items=FetchData();
+    const random=Math.floor(Math.random()*20)+1;
+    console.log(items);
     let dataFetched=false;
-    if(myHomeItem.homeData!==null)dataFetched=true;
-    console.log(myHomeItem);
-    console.log(dataFetched);
+    let myHomeItem=null;
+
+    if(items.products!==null){
+        dataFetched=true;
+        console.log(items.products[random])
+        myHomeItem=items.products[random];
+    }
+
     return(
         <div className="home-content-container">
             <div className="hot-product-container">
                 <div className="welcome">
-                    <h1>Welcome to ShopWithMe market</h1>
+                    <h1>Welcome to AmanShop market</h1>
                     <h2>A place where you feel free to pick your choice</h2>
                 </div>
                 {dataFetched&&
                     <div className="product-img-container">
-                        <img src={myHomeItem.homeData.image} alt={myHomeItem.homeData.name} />
+                        <img src={myHomeItem.image} alt={myHomeItem.name} />
                     </div>
                 }
                 <div className="hot-product">
                     {dataFetched&&
                         <div className="product-deal-container">
-                        <h2 className="advertise1">Don't Skip This Amazing Discount!</h2>
-                        <p className="advertise2">{myHomeItem.homeData.name}</p>
-                        <p className="price">${myHomeItem.homeData.price}</p>
-                        <button className="buy-button">Shop Now</button>
-                    </div>
+                            <h2 className="advertise1">Don't Skip This Amazing Discount!</h2>
+                            <p className="advertise2">{myHomeItem.name}</p>
+                            <p className="price">${myHomeItem.price}</p>
+                            <button className="buy-button">Shop Now</button>
+                        </div>
                     }
                 </div>
             </div>
@@ -84,10 +90,10 @@ export default function HomeContent(){
             <div className="footer">
                 <div className='contacts'>
                     <div className='address'>
-                        <p className='title'>ShopWithMe</p>
+                        <p className='title'>AmanShop</p>
                         <p>143 York Street</p>
                         <p>New York, NY 10001</p>
-                        <p>Email: support@ezshop.com</p>
+                        <p>Email: support@AmanShop.com</p>
                         <p>Phone: (555) 123-4567</p>
                     </div>
                     <div className='help'>
@@ -107,7 +113,7 @@ export default function HomeContent(){
                     </div>
                 </div>
                 <div className='last'>
-                    <p>© 2025 ShopWithMe. All rights reserved.</p>
+                    <p>© 2025 AmanShop. All rights reserved.</p>
                 </div>
             </div>
         </div>   
