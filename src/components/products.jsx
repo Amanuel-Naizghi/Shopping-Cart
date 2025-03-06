@@ -10,7 +10,9 @@ export default function Products(){
 
     const addItem=(e)=>{
         const itemId=e.target.getAttribute('data-key');
-        console.log(itemId);
+        const itemToAdd=productsData.products.filter((product)=>product.id==itemId);
+        cartData.push(itemToAdd[0]);
+        console.log(cartData);
     }
     
 
@@ -23,8 +25,8 @@ export default function Products(){
                 <div className='products-list-container'>
                     {
                         productsData.products.map(product=>(                            
-                            <div className='products-list'>
-                                <Link to='/details' key={product.id} state={product.id}>
+                            <div className='products-list' key={product.id}>
+                                <Link to='/details' state={product.id}>
                                     <div className="item-container" key={product.id}>
                                         <img src={product.image} alt={product.name} />
                                         <div className="product-details">

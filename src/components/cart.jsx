@@ -1,16 +1,83 @@
 import {useState} from 'react';
 import Header from './header';
+import cart from '../assets/cart.png';
 import { cartData } from '../main';
+import remove from '../assets/remove.png';
 
 export default function Cart(){
-    const [cartItems,setCartItems]=useState([]);
+    let myNewCart=[];
+    cartData.forEach(item=>{
+        let existingItem=myNewCart.find(i=>i.id===item.id);
+        if(existingItem){
+            existingItem.count++;
+        }else{
+            myNewCart.push({...item,count:1});
+        }
+    });
+
+
+    const[cartItems,setCartItems]=useState(myNewCart);
+
+    const handleChange=(id,newCount)=>{
+        setCartItems(prevData=>
+            prevData.map(item=>
+                (item.id===id&&newCount>0)?{...item,count:newCount}:item
+            )
+        )
+        console.log(cartItems);
+    }
+
+    const handleRemove=(id)=>{
+        setCartItems(prevData=>
+            prevData.filter(item=>
+                item.id!==id
+            )
+        )
+        console.log(cartItems);
+    }
+
+    const handleCost=(cartItems)=>{
+        let myCost=0;
+        cartItems.map(item=>myCost+=item.price*item.count);
+        
+        return myCost;
+    }
 
     return(
         <div className='cart-page-container'>
             <Header></Header>
-            <div className="your-cart">Your Cart</div>
-            <div className="cart-items">
-
+            <div className="cart-page">
+                <div className="your-cart">
+                    <img src={cart} alt='cart'/> 
+                    <h1 className='cart-header'>Your Cart</h1>
+                </div>
+                <div className="cart-items-container">
+                    {cartItems.length>0&&(
+                        cartItems.map(item=>(
+                            <div className='cart-item' key={item.id}>
+                                <div className="name-price-container">
+                                    <h2 className='item-name'>{item.name}</h2>
+                                    <p className="price">${item.price}</p>
+                                </div>
+                                <div className="order">
+                                    <button className='add-minus' onClick={()=>handleChange(item.id,item.count+1)}>+</button>
+                                    <input type="number" name='quantity' min='1' value={item.count} 
+                                    onChange={(e)=>handleChange(item.id,parseInt(e.target.value))}/>
+                                    <button className='add-minus' onClick={()=>handleChange(item.id,item.count-1)}>-</button>
+                                    <button className='remove' onClick={()=>handleRemove(item.id)}>
+                                        <img src={remove} alt="remove" />
+                                    </button>
+                                </div>
+                            </div>
+                        ))
+                    )}
+                    <div className="cart-cost">
+                        <h2 className="total-cost">
+                            Total: ${handleCost(cartItems).toFixed(2)}
+                        </h2>
+                        <button>Check out now</button>
+                    </div>
+                </div>
             </div>
         </div>
     )

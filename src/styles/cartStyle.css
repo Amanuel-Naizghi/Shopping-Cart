@@ -1,0 +1,84 @@
+.cart-page-container>.cart-page{
+    background:rgb(247, 247, 247);
+    height:100vh;
+    padding:2rem 3.5rem 1rem 3.5rem;
+}
+.cart-page-container>.cart-page>.your-cart{
+    display:flex;
+    justify-content: center;
+}
+.cart-page-container>.cart-page>.your-cart>img{
+    width:70px;
+    height:70px;
+    margin-right:15px;
+}
+.cart-page-container>.cart-page>.your-cart>h1{
+    font-size:2rem;
+}
+.cart-page-container>.cart-page>.cart-items-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-item{
+    background:white;
+    border-radius:10px;
+    display:flex;
+    justify-content:space-between;
+    margin:1rem 0;
+    padding:1.3rem;
+    height:100px;
+    width:800px;
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-item .item-name{
+    font-size:1.2rem;
+    color:gray;
+    text-align:start;
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-item .price{
+    font-size:1.2rem;
+    color:#3D8D7A;
+    text-align:start;
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-item>.order{
+    display:flex;
+    height: 30px;
+    margin:auto 0;
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-item>.order>.add-minus{
+    width:25px;
+    height:25px;
+    border-radius:5px;
+    font-size:1.2rem;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+} 
+.cart-page-container>.cart-page>.cart-items-container>.cart-item>.order>input{
+    width:25px;
+    height:20px;
+    margin:0 0.3rem;
+} 
+.cart-page-container>.cart-page>.cart-items-container>.cart-item>.order>.remove{
+    height:25px;
+    width:25px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    margin-left:0.3rem;
+    background:rgb(251, 165, 165);
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-item>.order img{
+    width:20px;
+    height:20px;
+}
+.cart-page-container>.cart-page>.cart-items-container>.cart-cost{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+    background:white;
+    width:400px;
+    height:150px;
+    border-radius:10px;
+}

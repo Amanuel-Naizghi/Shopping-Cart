@@ -13,11 +13,9 @@ export default function Details(){
     console.log(clickedProduct);
     (clickedProduct)&&console.log(clickedProduct.name);
 
-    const addItem=(e)=>{
-        if(productsData.products){
-            cartData.push(productsData.products[id-1]);
-            console.log(cartData);
-        }
+    const addItem=(e)=>{       
+        cartData.push(productsData.products[id-1]);
+        console.log(cartData);
     }
 
     return(

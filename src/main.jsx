@@ -11,6 +11,7 @@ import './styles/homeStyle.css';
 import './styles/headerStyle.css';
 import './styles/productsStyle.css';
 import './styles/detailsStyle.css';
+import './styles/cartStyle.css'
 
 let cartData=[];
 
