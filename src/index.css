@@ -53,10 +53,10 @@ button {
 button:hover {
   background-color: #3D8D7A;
 }
-button:focus,
+/* button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 input:focus{
   outline:0.1rem solid #3D8D7A;
 }

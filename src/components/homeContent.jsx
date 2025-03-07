@@ -3,8 +3,13 @@ import jewelry from '../assets/jewelry.jpg';
 import men from '../assets/men.jpg';
 import women from '../assets/women.jpg';
 import FetchData from './fetchData';
+import Header from './header';
+import { filterData } from './filterCartData';
+import { Link } from 'react-router-dom';
 
 export default function HomeContent(){
+    let itemsCount=filterData().length;
+
     let items=FetchData();
     const random=Math.floor(Math.random()*20)+1;
     console.log(items);
@@ -19,6 +24,7 @@ export default function HomeContent(){
 
     return(
         <div className="home-content-container">
+            <Header itemsCount={itemsCount}></Header>
             <div className="hot-product-container">
                 <div className="welcome">
                     <h1>Welcome to AmanShop market</h1>
@@ -35,28 +41,30 @@ export default function HomeContent(){
                             <h2 className="advertise1">Don't Skip This Amazing Discount!</h2>
                             <p className="advertise2">{myHomeItem.name}</p>
                             <p className="price">${myHomeItem.price}</p>
-                            <button className="buy-button">Shop Now</button>
+                            <Link to='/details' state={myHomeItem.id}>
+                                <button className="buy-button">Shop Now</button>
+                            </Link>                          
                         </div>
                     }
                 </div>
             </div>
             <div className="catagories">
-                <div className='electronics'>
+                <Link to='/products' state={'Electronics'} className='electronics'>
                     <img src={electronics} alt="electronics"/>
                     <p>Electronics</p>
-                </div>
-                <div className='jewelry'>
+                </Link>
+                <Link className='jewelry'>
                     <img src={jewelry} alt="electronics" />
                     <p>Jewelry</p>
-                </div>
-                <div className='men'>
+                </Link>
+                <Link className='men'>
                     <img src={men} alt="electronics" />
                     <p>Men's Clothing</p>
-                </div>
-                <div className='women'>
+                </Link>
+                <Link className='women'>
                     <img src={women} alt="electronics" />
                     <p>Women's Clothing</p>
-                </div>
+                </Link>
             </div>
             <div className='customer-reviews-container'>
                 <h1 className="customer-header">Our Customer reviews</h1>

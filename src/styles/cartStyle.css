@@ -1,6 +1,6 @@
 .cart-page-container>.cart-page{
     background:rgb(247, 247, 247);
-    height:100vh;
+    height:auto;
     padding:2rem 3.5rem 1rem 3.5rem;
 }
 .cart-page-container>.cart-page>.your-cart{

@@ -43,6 +43,15 @@
     color:#3D8D7A;
     text-align: start;
 }
+.products-container>.all-products>.products-list-container>.products-list>.add-to-cart{
+    background: #626F47;
+}
+.products-container>.all-products>.products-list-container>.products-list>.add-to-cart:hover{
+    background: #3D8D7A;
+}
+.products-container>.all-products>.products-list-container>.products-list>.item-added{
+    background: green;
+}
 /* .products-container>.all-products>.products-list-container{
     
     margin-top:1.5rem;

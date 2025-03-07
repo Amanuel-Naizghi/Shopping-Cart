@@ -1,22 +1,17 @@
 import {useState} from 'react';
 import Header from './header';
 import cart from '../assets/cart.png';
-import { cartData } from '../main';
 import remove from '../assets/remove.png';
+import { filterData } from './filterCartData';
+import {cartData} from '../main';
 
-export default function Cart(){
-    let myNewCart=[];
-    cartData.forEach(item=>{
-        let existingItem=myNewCart.find(i=>i.id===item.id);
-        if(existingItem){
-            existingItem.count++;
-        }else{
-            myNewCart.push({...item,count:1});
-        }
-    });
+let itemsCount=0;
 
+function Cart(){
+    let myNewCart=filterData();
 
     const[cartItems,setCartItems]=useState(myNewCart);
+    const[itemsCount,setItemsCount]=useState(myNewCart.length);
 
     const handleChange=(id,newCount)=>{
         setCartItems(prevData=>
@@ -33,6 +28,13 @@ export default function Cart(){
                 item.id!==id
             )
         )
+        for(let i=cartData.length-1;i>=0;i--){
+            if(cartData[i].id===id){
+                cartData.splice(i,1);
+            }
+        }
+        console.log(cartData);
+        setItemsCount(itemsCount-1);
         console.log(cartItems);
     }
 
@@ -45,7 +47,7 @@ export default function Cart(){
 
     return(
         <div className='cart-page-container'>
-            <Header></Header>
+            <Header itemsCount={itemsCount}></Header>
             <div className="cart-page">
                 <div className="your-cart">
                     <img src={cart} alt='cart'/> 
@@ -82,3 +84,5 @@ export default function Cart(){
         </div>
     )
 }
+
+export{Cart,itemsCount}

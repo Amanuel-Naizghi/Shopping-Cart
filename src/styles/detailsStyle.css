@@ -53,3 +53,12 @@
     height:50px;
     font-size:1rem;
 }
+.detail-content-container>.detail-info-container>.info-container>.add-to-cart{
+    background: #626F47;
+}
+.detail-content-container>.detail-info-container>.info-container>.add-to-cart:hover{
+    background:#3D8D7A;
+}
+.detail-content-container>.detail-info-container>.info-container>.item-added{
+    background: green;
+}

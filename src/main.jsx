@@ -5,7 +5,7 @@ import App from './App.jsx'
 import { createBrowserRouter, Router, RouterProvider } from 'react-router-dom';
 import Products from './components/products.jsx';
 import Login from './components/login.jsx';
-import Cart from './components/cart.jsx';
+import {Cart} from './components/cart.jsx';
 import Details from './components/details.jsx';
 import './styles/homeStyle.css';
 import './styles/headerStyle.css';

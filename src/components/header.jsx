@@ -1,7 +1,7 @@
 import Cart from '../assets/cart.png';
 import {Link} from 'react-router-dom';
 
-export default function Header(){
+export default function Header({itemsCount=0}){
 
     return(
         <div className="header-container">
@@ -17,7 +17,7 @@ export default function Header(){
                     <Link className='cart' to='/cart'>
                         <img src={Cart} alt="Cart" to='cart' />
                     </Link>
-                    <p className='cart-counter'>3</p>
+                    <p className='cart-counter'>{itemsCount}</p>
                 </div>
             </div>
            

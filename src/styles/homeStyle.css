@@ -77,20 +77,21 @@
     padding:3rem 2rem;
     justify-content:space-around;
 }
-.home-container>.home-content-container>.catagories>div{
-    background:white;
+.home-container>.home-content-container>.catagories>a{
+    background:rgb(234, 234, 234);
     padding:0 0.2rem;
     border-radius:10px;
 }
-.home-container>.home-content-container>.catagories>div:hover{
+.home-container>.home-content-container>.catagories>a:hover{
     transform: translate(4px, 4px);
+    color:#7e8472;
 }
 .home-container>.home-content-container>.catagories img{
     width:250px;
     height:400px;
     border-radius:10px;
 }
-.home-container>.home-content-container>.catagories>div>p{
+.home-container>.home-content-container>.catagories>a>p{
     font-size:1.5rem;
     font-weight:bold;
 }
