@@ -8,7 +8,7 @@ export default function Header({itemsCount=0}){
             <h2 className='header-logo'>AmanShop</h2>
             <div className="search-container">
                 <input className='search' type="text" placeholder='Search Item'/>
-                <button className='search-button'>Search</button>
+                <Link to='/products'><button type='submit' className='search-button'>Search</button></Link>
             </div>
             <div className="products-login-cart">
                 <Link to='/products'>Products</Link>

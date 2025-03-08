@@ -28,7 +28,7 @@ export default function HomeContent(){
             <div className="hot-product-container">
                 <div className="welcome">
                     <h1>Welcome to AmanShop market</h1>
-                    <h2>A place where you feel free to pick your choice</h2>
+                    <h2>A place to relax and pick your choice</h2>
                 </div>
                 {dataFetched&&
                     <div className="product-img-container">
@@ -53,16 +53,16 @@ export default function HomeContent(){
                     <img src={electronics} alt="electronics"/>
                     <p>Electronics</p>
                 </Link>
-                <Link className='jewelry'>
-                    <img src={jewelry} alt="electronics" />
+                <Link to='/products' state={'Jewelry'} className='jewelry'>
+                    <img src={jewelry} alt="jewelry" />
                     <p>Jewelry</p>
                 </Link>
-                <Link className='men'>
-                    <img src={men} alt="electronics" />
+                <Link to='/products' state={'Men\'s'} className='men'>
+                    <img src={men} alt="men items" />
                     <p>Men's Clothing</p>
                 </Link>
-                <Link className='women'>
-                    <img src={women} alt="electronics" />
+                <Link to='/products' state={'Women\'s'} className='women'>
+                    <img src={women} alt="women items" />
                     <p>Women's Clothing</p>
                 </Link>
             </div>

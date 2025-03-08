@@ -9,11 +9,11 @@ import { useLocation } from "react-router-dom";
 export default function Products({title='All Products'}){
     const [itemsCount,setItemsCount]=useState(filterData().length);
 
-    const productsData=FetchData();
-    console.log(productsData.products);
-
     const location= useLocation();
     const name=location.state;
+
+    const productsData=FetchData(name);
+    console.log(productsData.products);
 
     const addItem=(e)=>{
         e.target.className='item-added';

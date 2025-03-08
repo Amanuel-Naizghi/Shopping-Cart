@@ -12,6 +12,7 @@ import './styles/headerStyle.css';
 import './styles/productsStyle.css';
 import './styles/detailsStyle.css';
 import './styles/cartStyle.css'
+import './styles/loginStyle.css';
 
 let cartData=[];
 
