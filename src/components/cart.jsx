@@ -8,11 +8,11 @@ import {cartData} from '../main';
 let itemsCount=0;
 
 function Cart(){
-    let myNewCart=filterData();
+    let myNewCart=filterData();//Filtering the repeated items and adding the count
 
     const[cartItems,setCartItems]=useState(myNewCart);
     const[itemsCount,setItemsCount]=useState(myNewCart.length);
-
+//Adding or deduction of the number of items selected after user clicks the + or - button on the carts
     const handleChange=(id,newCount)=>{
         setCartItems(prevData=>
             prevData.map(item=>
@@ -21,7 +21,7 @@ function Cart(){
         )
         console.log(cartItems);
     }
-
+//Used for removing items after clicks the delete button
     const handleRemove=(id)=>{
         setCartItems(prevData=>
             prevData.filter(item=>
@@ -37,7 +37,7 @@ function Cart(){
         setItemsCount(itemsCount-1);
         console.log(cartItems);
     }
-
+//Calculating the total cost from the selected items
     const handleCost=(cartItems)=>{
         let myCost=0;
         cartItems.map(item=>myCost+=item.price*item.count);

@@ -1,5 +1,5 @@
 import {cartData} from '../main';
-
+//Used for filtering the repeated items selected by the used and adding the number of similar selections in the count 
 function filterData(){
     let myNewCart=[];
     cartData.forEach(item=>{

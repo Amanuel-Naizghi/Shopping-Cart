@@ -11,12 +11,12 @@ export default function HomeContent(){
     let itemsCount=filterData().length;
 
     let items=FetchData();
-    const random=Math.floor(Math.random()*20)+1;
+    const random=Math.floor(Math.random()*20)+1;//Used for generating a random number so that the item on the homepage will be a random item from the fakestore api
     console.log(items);
     let dataFetched=false;
     let myHomeItem=null;
 
-    if(items.products!==null){
+    if(items.products!==null){//checking whether the data is fetched or not
         dataFetched=true;
         console.log(items.products[random])
         myHomeItem=items.products[random];

@@ -7,24 +7,24 @@ import {filterData} from './filterCartData';
 import { useLocation } from "react-router-dom";
 
 export default function Products({title='All Products'}){
-    const [itemsCount,setItemsCount]=useState(filterData().length);
+    const [itemsCount,setItemsCount]=useState(filterData().length);//Used for setting the number of item selected on the cart
 
     const location= useLocation();
-    const name=location.state;
+    const name=location.state;//For receiving the category type selected by the user so that it would display it at the top
 
-    const productsData=FetchData(name);
-    console.log(productsData.products);
-
+    const productsData=FetchData(name);//Fetching the data from the fakestore api based on the category
+    console.log(productsData.products);//Just for displaying the data for testing
+    //Adding items to the selected cart data array
     const addItem=(e)=>{
         e.target.className='item-added';
-        e.target.textContent='✓ Item Added To Cart!';
+        e.target.textContent='✓ Item Added To Cart!';//Is displayed after user selects on of the items
         const itemId=e.target.getAttribute('data-key');
-        const itemToAdd=productsData.products.filter((product)=>product.id==itemId);
+        const itemToAdd=productsData.products.filter((product)=>product.id==itemId);//getting the item to be added to the cart data by its id from the fetched data
         cartData.push(itemToAdd[0]);
         console.log(cartData);
         setItemsCount(filterData().length);
 
-        setTimeout(()=>{
+        setTimeout(()=>{//Temporary display after user select on of the items in the list
             e.target.className='add-to-cart';
             e.target.textContent='Add To Cart';
         },2000);
