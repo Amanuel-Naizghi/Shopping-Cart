@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useState,useMemo} from 'react';
 import Header from './header';
 import cart from '../assets/cart.png';
 import remove from '../assets/remove.png';
@@ -38,11 +38,15 @@ function Cart(){
         console.log(cartItems);
     }
 //Calculating the total cost from the selected items
-    const handleCost=(cartItems)=>{
-        let myCost=0;
-        cartItems.map(item=>myCost+=item.price*item.count);
-        
-        return myCost;
+    const handleCost=()=>{
+        const totalPrice=useMemo(()=>{
+        return(
+            cartItems.reduce((total,item)=>total+item.price*item.count,0)
+        );
+            
+        },[cartItems]);
+
+        return totalPrice;
     }
 
     return(
